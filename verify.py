@@ -41,7 +41,7 @@ if st.button("Verify"):
     if cert_id:
         category, name, team_name, role = verify_certificate(cert_id)
         if category:
-            st.success("Certificate Verified!")
+            st.success("Certificate Verified ✅")
             st.write(f"Name: {name}")
             if category == "Evangelist":
                 st.write(f"Role: {team_name}")
