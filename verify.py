@@ -36,20 +36,26 @@ def verify_certificate(cert_id):
 st.title("H4B Certificate Verification Portal")
 
 cert_id = st.text_input("Enter Certificate ID")
+if(cert_id == "dmm81"):
+    st.info("He he! That was a Demo one XD")
 
 if st.button("Verify"):
-    if cert_id:
+    if(cert_id == "dmm81"):
+        st.info("He he! That was a Demo one XD")
+    elif cert_id:
         category, name, team_name, role = verify_certificate(cert_id)
         if category:
             st.success("Certificate Verified ✅")
-            st.write(f"Name: {name}")
+            st.info(f"Name: {name.title()}")
             if category == "Evangelist":
-                st.write(f"Role: {team_name}")
+                st.info(f"Role: {team_name}")
             else:
-                st.write(f"Team Name: {team_name}")
+                st.info(f"Team Name: {team_name}")
             st.write(f"Category: {category}")
             st.write(f"Issued on: 04-08-2024")
             st.write(f"Issued by: Hack4Bengal")
+            if category == "Participant":
+                st.write(f"Issued for Participating and successfully completing and submitting the project at Hack4Bengal 3.0 held from 28th to 30th June, 2024 at JIS College of Engineering, Kalyani. Best wishes to the whole team.")
         else:
             st.error("Invalid Certificate ID")
     else:
