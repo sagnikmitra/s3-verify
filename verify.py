@@ -1,6 +1,11 @@
 import streamlit as st
 import pandas as pd
 
+st.set_page_config(
+    page_title="H4B S4 Verify Certificate",
+    page_icon=":trophy:"
+)
+
 # Read CSV files
 participants_df = pd.read_csv("participants.csv")
 core_df = pd.read_csv("core.csv")
@@ -50,12 +55,12 @@ if st.button("Verify"):
             if category == "Evangelist":
                 st.info(f"Role: {team_name}")
             else:
-                st.info(f"Team Name: {team_name}")
+                st.info(f"Submitted Project for Hack4Bengal Season 4: {team_name}")
             st.write(f"Category: {category}")
-            st.write(f"Issued on: 04-08-2024")
+            st.write(f"Issued on: 06-05-2025")
             st.write(f"Issued by: Hack4Bengal")
             if category == "Participant":
-                st.write(f"Issued for Participating and successfully completing and submitting the project at Hack4Bengal 3.0 held from 28th to 30th June, 2024 at JIS College of Engineering, Kalyani. Best wishes to the whole team.")
+                st.write(f"Issued for Participating and successfully completing and submitting the project at Hack4Bengal 4.0 held from 18th to 20th April, 2025. Best wishes to the whole team.")
         else:
             st.error("Invalid Certificate ID")
     else:
